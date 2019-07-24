@@ -1,4 +1,5 @@
 pipeline {
+  agent { label 'master' }
   tools {
     maven 'localMaven'
   }
