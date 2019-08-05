@@ -25,5 +25,10 @@ pipeline {
         bat 'mvn package'
       }
     }
+    stage('Sonar') {
+      steps {
+       bat 'mvn sonar:sonar -Dsonar.projectKey=test -Dsonar.host.url=http://localhost:9000 -Dsonar.login=ab394b17e76cbbd7bd07e82e59221b30e18c0931' 
+      }
+    }
   }
 }
